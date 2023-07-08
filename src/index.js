@@ -9,6 +9,8 @@ import { CartProvider } from "./contexts/cart.context";
 import { Provider } from "react-redux";
 import { persistor, store } from "./store/store";
 import { PersistGate } from "redux-persist/integration/react";
+import * as serviceWorker from "./service-worker";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -27,3 +29,4 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
+serviceWorker.register();
