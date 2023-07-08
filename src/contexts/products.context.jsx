@@ -11,14 +11,6 @@ export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState({});
   const value = { products };
 
-  useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoryMap = await getCollectionAndDocuments();
-      setProducts(categoryMap);
-    };
-    getCategoriesMap();
-  }, []);
-
   return (
     <productContext.Provider value={value}>{children}</productContext.Provider>
   );
